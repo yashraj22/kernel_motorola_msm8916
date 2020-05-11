@@ -79,8 +79,14 @@ dtb-$(CONFIG_ARCH_MSM8909) += msm8909-sim.dtb \
 	apq8009-mtp-wcd9326-refboard.dtb \
 	apq8009-512mb-mtp-wcd9326-refboard.dtb
 
-# Do not include QC default DTBs if not needed
-ifneq ($(CONFIG_MMI_DEVICE_DTBS),y)
+ifeq ($(CONFIG_MACH_OPPO_MSM8939),y)
+dtb-$(CONFIG_MACH_14005) += msm8939-mtp-14005.dtb
+dtb-$(CONFIG_MACH_15011) += msm8939-mtp-15011.dtb
+dtb-$(CONFIG_MACH_15018) += msm8939-v3.0-mtp-15018.dtb
+dtb-$(CONFIG_MACH_15022) += msm8939-v3.0-mtp-15022.dtb
+dtb-$(CONFIG_MACH_15109) += msm8939-v3.0-mtp-15109.dtb
+dtb-$(CONFIG_MACH_15399) += msm8916-mtp-15399.dtb
+else
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-cdp.dtb \
 	msm8916-cdp-smb1360.dtb \
 	msm8916-mtp.dtb \
